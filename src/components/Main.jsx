@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
+import RecipeContent from './RecipeContent'
 
-const Main = ({recipeData:{Title, Time, Serivings, Ingredients, Instructions, Image}}) => {
+const Main = ({recipeData:{Title, Time, Servings, Ingredients, Instructions, Image}}) => {
 
-    const listIngredients = Ingredients.map((item, idx) => (
-        <li key={idx}>{item}</li>
-    ))
     
     const [toggle, setToggle] = useState(true)
 
@@ -18,11 +16,7 @@ const Main = ({recipeData:{Title, Time, Serivings, Ingredients, Instructions, Im
             <button>Show Recipe</button>
         </div>
         
-        {!toggle && (<div>
-            <ul>
-                {listIngredients}
-            </ul>
-        </div>
+        {!toggle && (<RecipeContent Title={Title} Time={Time} Servings={Servings} Ingredients={Ingredients} Instructions={Instructions} />
         )}
     </div>
   )
