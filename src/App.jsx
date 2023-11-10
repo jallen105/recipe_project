@@ -10,9 +10,9 @@ function App() {
   let listRecipes = RecipeData
     const [searchInput, setSearchInput] = useState("")
 
-    const handleChange = (e) => {
-      e.preventDefault()
-      setSearchInput(e.target.value)
+    const handleChange = (event) => {
+      event.preventDefault()
+      setSearchInput(event.target.value)
     }
 
     if (searchInput.length > 0) {
@@ -20,6 +20,19 @@ function App() {
         return recipe.Title.toLowerCase().match(searchInput)
       })
     }
+  
+  listRecipes = listRecipes.sort((a, b) => {
+    const titleA = a.Title.toUpperCase()
+    const titleB = b.Title.toUpperCase()
+    if (titleA < titleB) {
+      return -1
+    }
+    if (titleA > titleB) {
+      return 1
+    }
+
+    return 0
+  })
 
   listRecipes = listRecipes.map((recipe, idx) => (
     <Main key={idx} recipeData={recipe} />
