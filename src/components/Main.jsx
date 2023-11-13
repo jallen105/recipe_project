@@ -1,24 +1,35 @@
 import React, { useState } from 'react'
-import RecipeContent from './RecipeContent'
+import RecipeCards from './RecipeCards'
 
-const Main = ({recipeData:{Title, Time, Servings, Ingredients, Instructions, Image}}) => {
+const Main = ({recipeData}) => {
 
-    
-    const [toggle, setToggle] = useState(true)
+    let listRecipes = recipeData
+
+    const [searchInput, setSearchInput] = useState("")
+
+    const handleChange = (event) => {
+      event.preventDefault()
+      setSearchInput(event.target.value)
+    }
+
+    if (searchInput.length > 0) {
+      listRecipes =  listRecipes.filter((recipe) => {
+        return recipe.Title.toLowerCase().match(searchInput)
+      })
+    }
+
+    listRecipes =  listRecipes.map((recipe, idx) => (
+        <RecipeCards key={idx} recipeData={recipe} />
+      ))
+  
 
   return (
-    <div>
-                
-        <h2>{Title}</h2>
-
-        <div onClick={() => setToggle(!toggle)} className='img-container'>
-            <img src={Image} alt={Title}/>
-            <button>Show Recipe</button>
-        </div>
-        
-        {!toggle && (<RecipeContent Title={Title} Time={Time} Servings={Servings} Ingredients={Ingredients} Instructions={Instructions} />
-        )}
-    </div>
+    <main>
+        <input type='text' placeholder='Search here' onChange={handleChange} value={searchInput} />
+        {
+            listRecipes
+        }
+    </main>
   )
 }
 
