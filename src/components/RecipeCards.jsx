@@ -4,7 +4,7 @@ import RecipeContent from './RecipeContent'
 const RecipeCards = ({recipeData:{Title, Time, Servings, Ingredients, Instructions, Image}}) => {
 
     
-    const [toggle, setToggle] = useState(true)
+    const [toggle, setToggle] = useState(false)
 
   return (
     <div>
@@ -13,10 +13,10 @@ const RecipeCards = ({recipeData:{Title, Time, Servings, Ingredients, Instructio
 
         <div onClick={() => setToggle(!toggle)} className='img-container'>
             <img src={Image} alt={Title}/>
-            <button>Show Recipe</button>
+            <button>{toggle ? 'Show' : 'Hide'} Recipe</button>
         </div>
         
-        {!toggle && (<RecipeContent Title={Title} Time={Time} Servings={Servings} Ingredients={Ingredients} Instructions={Instructions} />
+        {toggle && (<RecipeContent Title={Title} Time={Time} Servings={Servings} Ingredients={Ingredients} Instructions={Instructions} />
         )}
     </div>
   )

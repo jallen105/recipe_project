@@ -4,10 +4,10 @@ const Header = () => {
   
   
   return (
-    <div>
+    <header>
         <h1>Christmas Recipes</h1>
         
-    </div>
+    </header>
   )
 }
 
