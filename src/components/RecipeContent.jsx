@@ -7,7 +7,7 @@ const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions}) => {
     ))
 
   return (
-    <div>
+    <div className='recipe-content'>
         
         <p>Cooking time: {Time} minutes</p>
         <p>{Servings}</p>

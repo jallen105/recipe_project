@@ -7,13 +7,13 @@ const RecipeCards = ({recipeData:{Title, Time, Servings, Ingredients, Instructio
     const [toggle, setToggle] = useState(false)
 
   return (
-    <div>
+    <div className='recipe-card'>
                 
-        <h2>{Title}</h2>
+        <h3>{Title}</h3>
 
-        <div onClick={() => setToggle(!toggle)} className='img-container'>
+        <div className='img-container'>
             <img src={Image} alt={Title}/>
-            <button>{toggle ? 'Show' : 'Hide'} Recipe</button>
+            <button onClick={() => setToggle(!toggle)} className='show-more-btn'>{toggle ? 'Hide' : 'Show'} Recipe</button>
         </div>
         
         {toggle && (<RecipeContent Title={Title} Time={Time} Servings={Servings} Ingredients={Ingredients} Instructions={Instructions} />

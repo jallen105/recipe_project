@@ -18,10 +18,10 @@ function App() {
   })
 
   return (
-    <div>
+    <>
       <Header />
       <Main recipeData={RecipeData} />
-    </div>
+    </>
   )
 }
 
