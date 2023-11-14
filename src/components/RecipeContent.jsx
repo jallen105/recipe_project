@@ -1,28 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions}) => {
+const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image}) => {
 
     const listIngredients = Ingredients.map((item, idx) => (
         <li key={idx}>{item}</li>
     ))
 
+    const [toggleInstructions, setToggleInstructions] = useState(false)
+    const [toggleIngredients, setToggleIngredients] = useState(false)
+
   return (
     <div className='recipe-content'>
+
+        <div className='img-container'>
+            <img src={Image} alt={Title}/>
+        </div>
         
-        <p>Cooking time: {Time} minutes</p>
-        <p>{Servings}</p>
+        <div>
+            <p>Cooking time: {Time} minutes</p>
+            <p>{Servings}</p>
+        </div>
+
         
-        <details>
-            <summary>Cooking instructions:</summary>
-            <p>{Instructions}</p>
-        </details>
+        <div>
+        <button onClick={() => setToggleInstructions(!toggleInstructions)} className='show-more-btn'>{toggleInstructions ? 'Hide' : 'Show'} Instructions</button>
+            <p style={{ display: toggleInstructions ? 'block' : 'none'}}>Cooking instructions: {Instructions}</p>
+        </div>
             
-        <details>
-            <summary>Ingredients:</summary>
-            <ul>
+        <div>
+        <button onClick={() => setToggleIngredients(!toggleIngredients)} className='show-more-btn'>{toggleIngredients ? 'Hide' : 'Show'} Ingredients</button>
+            <ul style={{ display: toggleIngredients ? 'block' : 'none'}}>
                 {listIngredients}
             </ul>
-        </details>
+        </div>
       
     </div>
   )

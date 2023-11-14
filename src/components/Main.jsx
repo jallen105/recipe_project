@@ -25,7 +25,10 @@ const Main = ({recipeData}) => {
 
   return (
     <main>
-        <input type='text' placeholder='Search here' onChange={handleChange} value={searchInput} />
+        <div className='searchbar'>
+            <input type='text' placeholder='Search here' onChange={handleChange} value={searchInput} />
+        </div>
+        
         <div className='recipe-container'>
         {
             listRecipes
