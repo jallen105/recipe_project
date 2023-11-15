@@ -23,13 +23,31 @@ const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image}
 
         
         <div>
-        <button onClick={() => setToggleInstructions(!toggleInstructions)} className='show-more-btn'>{toggleInstructions ? 'Hide' : 'Show'} Instructions</button>
-            <p style={{ display: toggleInstructions ? 'block' : 'none'}}>Cooking instructions: {Instructions}</p>
+        <button 
+        onClick={() => setToggleInstructions(!toggleInstructions)} 
+        className='show-more-btn'>
+            {toggleInstructions ? 'Hide' : 'Show'} Instructions
+            </button>
+            <p className='slide' 
+            style={{
+                visibility: toggleInstructions ? 'visible' : 'hidden', 
+                opacity: toggleInstructions ? 1 : 0, 
+                maxHeight: toggleInstructions ? '300px' : '0' }}
+                >
+                    Cooking instructions: {Instructions}
+                    </p>
         </div>
             
         <div>
-        <button onClick={() => setToggleIngredients(!toggleIngredients)} className='show-more-btn'>{toggleIngredients ? 'Hide' : 'Show'} Ingredients</button>
-            <ul style={{ display: toggleIngredients ? 'block' : 'none'}}>
+        <button 
+        onClick={() => setToggleIngredients(!toggleIngredients)} 
+        className='show-more-btn'>
+            {toggleIngredients ? 'Hide' : 'Show'} Ingredients
+            </button>
+            <ul 
+            className='slide' 
+            style={{ visibility: toggleIngredients ? 'visible' : 'hidden', opacity: toggleIngredients ? 1 : 0, maxHeight: toggleIngredients ? '300px' : '0' }}
+            >
                 {listIngredients}
             </ul>
         </div>

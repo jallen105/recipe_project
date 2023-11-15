@@ -27,7 +27,7 @@ h1 {
 }
 
 .recipe-card {
-  width: 90vw;
+  width: 95vw;
 }
 
 .recipe-card h3 {
@@ -36,4 +36,8 @@ h1 {
 
 .img-container img{
   width: 250px;
+}
+
+.slide {
+  transition: visibility 1s, opacity 1s, max-height .5s;
 }
