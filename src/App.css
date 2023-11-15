@@ -29,6 +29,10 @@ h1 {
   text-align: center;
   font-family: 'Mountains of Christmas', serif;
   font-size: 3em;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: repeating-linear-gradient(45deg, forestgreen 0, forestgreen 4px, firebrick 4px, firebrick 6px); 
 }
 
 .searchbar {
@@ -58,6 +62,7 @@ h1 {
   width: 600px;
   border-radius: 10px;
   border: 5px dashed;
+  box-shadow: 5px 5px 5px dimgray;
 
 }
 
