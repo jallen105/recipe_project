@@ -24,6 +24,7 @@ const RecipeCards = ({recipeData:{Title, Time, Servings, Ingredients, Instructio
         Ingredients={Ingredients} 
         Instructions={Instructions} 
         Image={Image} 
+        checkered={{evenOdd}}
         />
         
         

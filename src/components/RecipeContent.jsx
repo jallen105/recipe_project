@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image}) => {
+const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image, checkered:{evenOdd}}) => {
 
     const listIngredients = Ingredients.map((item, idx) => (
         <li key={idx}>{item}</li>
@@ -9,11 +9,18 @@ const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image}
     const [toggleInstructions, setToggleInstructions] = useState(false)
     const [toggleIngredients, setToggleIngredients] = useState(false)
 
+    let altBtnColor;
+    if (evenOdd === 'even') {
+        altBtnColor = 'odd'
+    } else {
+        altBtnColor = 'even'
+    }
+
   return (
     <div className='recipe-content'>
 
         <div className='img-container'>
-            <img src={Image} alt={Title}/>
+            <img src={Image} alt={Title} className={altBtnColor} />
         </div>
         
         <div className='info'>
@@ -25,18 +32,18 @@ const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image}
         <div className='instructions'>
         <button 
         onClick={() => setToggleInstructions(!toggleInstructions)} 
-        className='show-more-btn'>
+        className={`show-more-btn ${altBtnColor}`}>
             {toggleInstructions ? 'Hide' : 'Show'} Instructions
             </button>
             <p className={toggleInstructions ? 'slide-down' : 'slide-up'} >
                     Cooking instructions: {Instructions}
-                    </p>
+            </p>
         </div>
             
         <div className='ingredients'>
         <button 
         onClick={() => setToggleIngredients(!toggleIngredients)} 
-        className='show-more-btn'>
+        className={`show-more-btn ${altBtnColor}`}>
             {toggleIngredients ? 'Hide' : 'Show'} Ingredients
             </button>
             <ul className={toggleIngredients ? 'slide-down' : 'slide-up'} >

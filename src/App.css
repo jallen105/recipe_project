@@ -52,17 +52,12 @@ h1 {
 
 }
 
-.show-more-btn {
-  margin: 0;
-  position: relative;
-  left: 50%;
-}
-
 .recipe-card {
   color: lightgoldenrodyellow;
   margin: 14px;
   width: 600px;
   border-radius: 10px;
+  border: 5px dashed;
 
 }
 
@@ -79,6 +74,8 @@ h1 {
 
 .img-container img{
   width: 250px;
+  border-radius: 10px;
+  border: 2px dashed;
 }
 
 .info {
@@ -87,7 +84,7 @@ h1 {
 
 .instructions {
   flex-shrink: 2;
-  margin: 5px;
+  margin: 5px 7px;
 }
 
 .ingredients {
@@ -104,7 +101,17 @@ ul li {
   padding-right: 1em;
 }
 
-/* button transitions */
+/* buttons */
+button.show-more-btn {
+  margin: 0 auto;
+  display: block;
+  color: lightgoldenrodyellow;
+  cursor: pointer;
+  border: 1.5px lightgoldenrodyellow solid;
+  border-radius: 5px;
+  transition: all .5s;
+}
+
 .slide-down {
   transition: visibility 1s, opacity 1s, max-height .6s;
   visibility: visible;
@@ -123,10 +130,32 @@ ul li {
 /* alternating background color */
 .even {
   background-color: forestgreen;
-  border: 5px darkred dashed;
+  border-color: darkred;
 }
 
 .odd {
   background-color: firebrick;
-  border: 5px darkgreen dashed;
+  border-color: darkgreen;
+}
+
+button.even:hover {
+  background-color: lightgoldenrodyellow;
+  color: forestgreen;
+  border-color: forestgreen;
+}
+
+button.odd:hover {
+  background-color: lightgoldenrodyellow;
+  color: firebrick;
+  border-color: firebrick;
+}
+
+img.even {
+  background-color: firebrick;
+  border-color: forestgreen;
+}
+
+img.odd {
+  border-color: firebrick;
+  background-color: forestgreen;
 }
