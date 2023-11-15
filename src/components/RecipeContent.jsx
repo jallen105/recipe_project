@@ -16,38 +16,30 @@ const RecipeContent = ({Title, Time, Servings, Ingredients, Instructions, Image}
             <img src={Image} alt={Title}/>
         </div>
         
-        <div>
+        <div className='info'>
             <p>Cooking time: {Time} minutes</p>
             <p>{Servings}</p>
         </div>
 
         
-        <div>
+        <div className='instructions'>
         <button 
         onClick={() => setToggleInstructions(!toggleInstructions)} 
         className='show-more-btn'>
             {toggleInstructions ? 'Hide' : 'Show'} Instructions
             </button>
-            <p className='slide' 
-            style={{
-                visibility: toggleInstructions ? 'visible' : 'hidden', 
-                opacity: toggleInstructions ? 1 : 0, 
-                maxHeight: toggleInstructions ? '300px' : '0' }}
-                >
+            <p className={toggleInstructions ? 'slide-down' : 'slide-up'} >
                     Cooking instructions: {Instructions}
                     </p>
         </div>
             
-        <div>
+        <div className='ingredients'>
         <button 
         onClick={() => setToggleIngredients(!toggleIngredients)} 
         className='show-more-btn'>
             {toggleIngredients ? 'Hide' : 'Show'} Ingredients
             </button>
-            <ul 
-            className='slide' 
-            style={{ visibility: toggleIngredients ? 'visible' : 'hidden', opacity: toggleIngredients ? 1 : 0, maxHeight: toggleIngredients ? '300px' : '0' }}
-            >
+            <ul className={toggleIngredients ? 'slide-down' : 'slide-up'} >
                 {listIngredients}
             </ul>
         </div>
