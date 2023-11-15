@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "vite build && touch ./dist/CNAME && echo 'zesty-time.surge.sh' >> ./dist/CNAME && npx surge --project ./dist --domain 'zesty-time.surge.sh' "
   },
   "dependencies": {
     "react": "^18.2.0",
