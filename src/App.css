@@ -14,7 +14,7 @@ h1 {
 
 .recipe-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
@@ -23,28 +23,65 @@ h1 {
 .recipe-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 
 }
 
+.show-more-btn {
+  margin: 0;
+  position: relative;
+  left: 50%;
+}
+
 .recipe-card {
-  /* width: 95vw; */
   color: lightgoldenrodyellow;
+  margin: 20px;
+  width: 600px;
 }
 
 .recipe-card h3 {
   text-align: center;
 }
 
+/* recipe items */
+.img-container {
+  margin: 5px;
+}
+
 .img-container img{
   width: 250px;
 }
 
+.info {
+  margin: 5px;
+}
+
+.instructions {
+  flex-shrink: 2;
+  margin: 5px;
+}
+
+.ingredients {
+  margin: 5px;
+}
+
+.ingredients ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+ul li {
+  padding-right: 1em;
+}
+
+/* button transitions */
 .slide-down {
-  transition: visibility 1s, opacity 1s, max-height .5s;
+  transition: visibility 1s, opacity 1s, max-height .6s;
   visibility: visible;
   opacity: 1;
-  max-height: 300px;
+  max-height: 800px;
 }
 
 .slide-up {
@@ -54,10 +91,11 @@ h1 {
   max-height: 0;
 }
 
+/* alternating background color */
 .even {
-  background-color: green;
+  background-color: forestgreen;
 }
 
 .odd {
-  background-color: red;
+  background-color: firebrick;
 }

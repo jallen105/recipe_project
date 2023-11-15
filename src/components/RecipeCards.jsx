@@ -4,7 +4,7 @@ import RecipeContent from './RecipeContent'
 const RecipeCards = ({recipeData:{Title, Time, Servings, Ingredients, Instructions, Image}, index:{count}}) => {
 
   let evenOdd;
-  console.log(typeof count)
+
   if ( (count % 2) === 0) {
     evenOdd = 'even'
   } else {

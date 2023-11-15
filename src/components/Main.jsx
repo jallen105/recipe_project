@@ -21,7 +21,6 @@ const Main = ({recipeData}) => {
 
     listRecipes = listRecipes.map((recipe, idx) => (
         count+=1,
-        console.log(count),
         <RecipeCards key={idx} recipeData={recipe} index={{count}} />
       ))
   
