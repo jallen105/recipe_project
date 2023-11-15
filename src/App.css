@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: lightgoldenrodyellow;
 }
 
 h1 {
@@ -27,7 +28,8 @@ h1 {
 }
 
 .recipe-card {
-  width: 95vw;
+  /* width: 95vw; */
+  color: lightgoldenrodyellow;
 }
 
 .recipe-card h3 {
@@ -50,4 +52,12 @@ h1 {
   visibility: hidden;
   opacity: 0;
   max-height: 0;
+}
+
+.even {
+  background-color: green;
+}
+
+.odd {
+  background-color: red;
 }

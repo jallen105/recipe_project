@@ -4,6 +4,7 @@ import RecipeCards from './RecipeCards'
 const Main = ({recipeData}) => {
 
     let listRecipes = recipeData
+    let count = 0
 
     const [searchInput, setSearchInput] = useState("")
 
@@ -19,7 +20,9 @@ const Main = ({recipeData}) => {
     }
 
     listRecipes = listRecipes.map((recipe, idx) => (
-        <RecipeCards key={idx} recipeData={recipe} />
+        count+=1,
+        console.log(count),
+        <RecipeCards key={idx} recipeData={recipe} index={{count}} />
       ))
   
 
