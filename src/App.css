@@ -28,7 +28,7 @@ body {
 h1 {
   text-align: center;
   font-family: 'Mountains of Christmas', serif;
-  font-size: 3em;
+  font-size: 4em;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -118,14 +118,14 @@ button.show-more-btn {
 }
 
 .slide-down {
-  transition: visibility 1s, opacity 1s, max-height .6s;
+  transition:  max-height .8s, visibility .5s, opacity .5s;
   visibility: visible;
   opacity: 1;
   max-height: 800px;
 }
 
 .slide-up {
-  transition: visibility .6s, opacity .6s, max-height 1s;
+  transition: visibility .8s, opacity .8s, max-height .8s;
   visibility: hidden;
   opacity: 0;
   max-height: 0;
@@ -163,4 +163,40 @@ img.even {
 img.odd {
   border-color: firebrick;
   background-color: forestgreen;
+}
+
+@media screen and (min-width: 1290px) {
+  
+  div.odd:nth-of-type(4n - 3) {
+    background-color: forestgreen;
+    border-color: darkred;
+  }
+
+  div.odd:nth-of-type(4n - 3) button {
+    background-color: firebrick;
+    border-color: lightgoldenrodyellow;
+  }
+
+  div.odd:nth-of-type(4n - 3) button:hover {
+    background-color: lightgoldenrodyellow;
+    color: firebrick;
+    border-color: firebrick;
+  }
+  
+  div.even:nth-of-type(4n + 2) {
+  background-color: firebrick;
+  border-color: darkgreen;
+  }
+  
+  div.even:nth-of-type(4n + 2) button {
+    background-color: forestgreen;
+    border-color: lightgoldenrodyellow;
+  }
+
+  div.even:nth-of-type(4n + 2) button:hover {
+  background-color: lightgoldenrodyellow;
+  color: forestgreen;
+  border-color: forestgreen;
+  }
+
 }

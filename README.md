@@ -13,3 +13,5 @@ search bar information: https://plainenglish.io/blog/how-to-implement-a-search-b
 react toggle buttons: https://www.freecodecamp.org/news/toggle-elements-in-react-using-hooks/
 
 striped text is from https://codepen.io/estelle/pen/WNpVYze 
+
+dataset from https://www.kaggle.com/datasets/denizyigit/christmas-dinner-recipes
