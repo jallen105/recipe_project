@@ -15,7 +15,7 @@ const Main = ({recipeData}) => {
 
     if (searchInput.length > 0) {
       listRecipes = listRecipes.filter((recipe) => {
-        return recipe.Title.toLowerCase().match(searchInput)
+        return recipe.Title.toLowerCase().match(searchInput.toLowerCase())
       })
     }
 
